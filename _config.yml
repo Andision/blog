@@ -97,9 +97,18 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+# theme: landscape
+theme: Hacker
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+- type: git
+  repo: https://github.com/AndisionArchive/blog #https://bitbucket.org/JohnSmith/johnsmith.bitbucket.io
+  branch: gh-pages
+  # message: [message]
+
+- type: git
+  repo: https://github.com/AndisionArchive/andisionarchive.github.io #https://bitbucket.org/JohnSmith/johnsmith.bitbucket.io
+  # branch: gh-pages
+  # message: [message]
