@@ -16,7 +16,42 @@ tags: [Python]
 
 - 如何用Python在控制台输出不同样式的文字
 
-# 术语
+# Python中打印彩色文本
+
+在实现了ANSI的终端中，我们可以利用Python和ANSI转义字符实现打印彩色的文本。可以在不同的终端运行下面的脚本查看多种色彩的效果。
+
+```python
+def print_format_table():
+    """
+    prints table of formatted text format options
+    """
+    for style in range(8):
+        for fg in range(30,38):
+            s1 = ''
+            for bg in range(40,48):
+                format = ';'.join([str(style), str(fg), str(bg)])
+                s1 += '\x1b[%sm %s \x1b[0m' % (format, format)
+            print(s1)
+        print('\n')
+
+print_format_table()
+```
+其中`\x1b`即为`Escape`对应的转义字符, `\x1b[`为CSI序列，`\x1b[  m`为SGR序列，`\x1b[0m`为重置SGR样式对应的指令。
+
+一些常用的样式如下
+
+```python
+print("\033[1;30;47mPython Format 1\033[0m")
+print("\033[0;31;40mPython Format 2\033[0m")
+print("\033[0;32;40mPython Format 3\033[0m")
+print("\033[0;33;40mPython Format 4\033[0m")
+print("\033[1;37;41mPython Format 5\033[0m")
+print("\033[1;37;42mPython Format 6\033[0m")
+print("\033[1;37;43mPython Format 7\033[0m")
+```
+
+
+# 相关概念
 
 ## ASCII
 ASCII（发音/ˈæski/，American Standard Code for Information Interchange，美国信息交换标准代码）是基于拉丁字母的一套电脑编码系统。ASCII 由电报码发展而来，共定义了128个字符；其中33个字符无法显示（一些终端提供了扩展，使得这些字符可显示为诸如笑脸、扑克牌花式等8-bit符号），且这33个字符多数都已是陈废的控制字符。控制字符的用途主要是用来操控已经处理过的文字。在33个字符之外的是95个可显示的字符。
@@ -238,40 +273,6 @@ ANSI颜色表
 | 亮青       | 96         | 106        |
 | 亮白       | 97         | 107        |
 
-
-# Python中打印彩色文本
-
-在实现了ANSI的终端中，我们可以利用Python和ANSI转义字符实现打印彩色的文本。可以在不同的终端运行下面的脚本查看多种色彩的效果。
-
-```python
-def print_format_table():
-    """
-    prints table of formatted text format options
-    """
-    for style in range(8):
-        for fg in range(30,38):
-            s1 = ''
-            for bg in range(40,48):
-                format = ';'.join([str(style), str(fg), str(bg)])
-                s1 += '\x1b[%sm %s \x1b[0m' % (format, format)
-            print(s1)
-        print('\n')
-
-print_format_table()
-```
-其中`\x1b`即为`Escape`对应的转义字符, `\x1b[`为CSI序列，`\x1b[  m`为SGR序列，`\x1b[0m`为重置SGR样式对应的指令。
-
-一些常用的样式如下
-
-```python
-print("\033[1;30;47mPython Format 1\033[0m")
-print("\033[0;31;40mPython Format 2\033[0m")
-print("\033[0;32;40mPython Format 3\033[0m")
-print("\033[0;33;40mPython Format 4\033[0m")
-print("\033[1;37;41mPython Format 5\033[0m")
-print("\033[1;37;42mPython Format 6\033[0m")
-print("\033[1;37;43mPython Format 7\033[0m")
-```
 
 # 参考
 
