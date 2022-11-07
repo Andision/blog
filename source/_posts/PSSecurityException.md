@@ -17,13 +17,16 @@ cnpm : 无法加载文件 C:\Users\Andision\AppData\Roaming\npm\cnpm.ps1，因�
     + FullyQualifiedErrorId : UnauthorizedAccess
 ```
 
-![PS](PSSecurityException/1.png)
+<!-- ![PS](PSSecurityException/1.png)
+ -->
+ {% asset_img 1.png PS %}
 
 # 解决方案
 
 1. 使用管理员身份运行终端或PowerShell，一种快速的方法是鼠标右键任务栏中的Windows图标，Windows 10 系统选择`PowerShell（管理员）`，Windows 11 系统选择`终端（管理员）`。
 
-    ![PS](PSSecurityException/2.png)
+    {% asset_img 2.png PS %}
+    <!-- ![PS](PSSecurityException/2.png) -->
 
 2. 在管理员身份运行的终端或PowerShell中输入如下内容并回车。
 

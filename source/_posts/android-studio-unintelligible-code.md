@@ -8,13 +8,15 @@ tags: [Android Studio]
 
 在新电脑上安装Android Studio并编译应用时，Build日志输出了一些日志信息，但其中的中文显示为乱码`�`。
 
-![乱码图片](android-studio-unintelligible-code/1.png)
+<!-- ![乱码图片](1.png) -->
+{% asset_img 1.png 乱码图片 %}
 
 # 解决方案
 
 1. 在Android Studio中选择`Help -> Edit Custom VM Options...`
 
-    ![选项图片](android-studio-unintelligible-code/2.png)
+    <!-- ![选项图片](android-studio-unintelligible-code/2.png) -->
+    {% asset_img 2.png 选项图片 %}
 
 2. 在打开的文件末尾添加如下内容
 
